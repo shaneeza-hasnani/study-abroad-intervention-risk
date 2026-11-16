@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waypoint · Application review desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><a class="brand" href="/">WAYPOINT</a><span class="badge">Synthetic demo</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Application review desk</p>
+      <h1>Find the cases that may need a human nudge.</h1>
+      <p>Prioritize outreach using information available today. The score supports staff judgment—it never determines student eligibility.</p>
+    </section>
+    <section class="desk">
+      <form id="case-form">
+        <div class="form-head"><h2>Case snapshot</h2><button type="button" id="sample">Load sample</button></div>
+        <div class="grid">
+          <label>Case ID<input name="case_id" value="DEMO-1042" required></label>
+          <label>Snapshot date<input name="snapshot_date" type="date" required></label>
+          <label>Days to departure<input name="days_to_departure" type="number" min="0" value="52" required></label>
+          <label>Application complete (%)<input name="application_completion_pct" type="number" min="0" max="100" value="64" required></label>
+          <label>Documents missing<input name="documents_missing" type="number" min="0" value="2" required></label>
+          <label>Days since last contact<input name="days_since_last_contact" type="number" min="0" value="18" required></label>
+          <label>Payment complete (%)<input name="payment_completion_pct" type="number" min="0" max="100" value="35" required></label>
+          <label>Failed payment attempts<input name="payment_attempts_failed" type="number" min="0" value="1" required></label>
+          <label>Prior staff contacts<input name="prior_staff_contacts" type="number" min="0" value="2" required></label>
+          <label>Program cost (USD)<input name="program_cost_usd" type="number" min="0" value="12800" required></label>
+          <label>Destination region<select name="destination_region"><option>Europe</option><option>Asia</option><option>Latin America</option><option>Oceania</option><option>Africa</option></select></label>
+          <label>Application channel<select name="application_channel"><option>Web</option><option>Advisor referral</option><option>University partner</option><option>Event</option></select></label>
+        </div>
+        <button class="primary" type="submit">Score for review</button><p id="error" role="alert"></p>
+      </form>
+      <aside id="result" aria-live="polite">
+        <div class="empty"><span>○</span><h2>Ready for a case</h2><p>Enter a current snapshot to see the review priority and its main drivers.</p></div>
+      </aside>
+    </section>
+    <section class="guardrail"><strong>Designed around intervention, not exclusion.</strong><span>No protected attributes. No automated denial. Staff outcomes are recorded for monitoring and retraining.</span></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
+
